@@ -52,10 +52,8 @@ public class MetricConsumerEnhanced {
   }
 
 
-  //insert data
-  //synchronized function in theory is not necessary with concurrent containers. 
-  //in tests i have to put it for avoiding race conditions. 
-  private synchronized void insertData(Map<Instant, Integer> count, Map<Instant, Integer> total, Map<Instant, Double> avg, Instant index, Integer value) {
+  //insert data (put synchronized if there are race conditions)
+  private void insertData(Map<Instant, Integer> count, Map<Instant, Integer> total, Map<Instant, Double> avg, Instant index, Integer value) {
     if (count.containsKey(index)) {
         count.put(index, count.get(index) +  ONE);
         total.put(index, total.get(index) + value);
@@ -82,7 +80,7 @@ public class MetricConsumerEnhanced {
   //processor
   public Map<String, Map<Instant, Double>> consume(File file) throws IOException {
    //file digester
-   try (Stream<String> stream = Files.lines(file.toPath(), StandardCharsets.UTF_8).parallel()) {
+   try (Stream<String> stream = Files.lines(file.toPath(), StandardCharsets.UTF_8)) {
       stream.parallel().forEach(line -> { 
         processLine(line);
       });
