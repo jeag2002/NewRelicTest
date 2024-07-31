@@ -27,7 +27,7 @@ We ask you to do 3 simple things:
 
 - Modify the metric-consumer in order to be able to process multiple metrics in parallel.
 
-Complete statement can be found [here](nr-be-technical-interview/doc/Home Task Interview - Java.docx.pdf)
+Complete statement can be found [here](nr-be-technical-interview/doc/statement.pdf)
 
 ## Environment:
 
