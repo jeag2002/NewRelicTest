@@ -4,21 +4,20 @@ Proposal of solution for the proposal exercice of new relic, for later discussio
 
 # Statement:
 
-This is your first day working at NewRelic and a task named: “Refactor metric-consumer” has been assigned to you
-You will find the current metric-cosumer code in the metric-consumer.zip file. It contains:
+This is your first day working at NewRelic and a task named: “Refactor metric-consumer” has been assigned to you.You will find the current metric-cosumer code in the metric-consumer.zip file. It contains:
 
-● the input.txt file with some metric values. This file is used for testing. Metrics are represented in the following format: <timestamp> <metric-name> <value>
+the input.txt file with some metric values. This file is used for testing. Metrics are represented in the following format: <timestamp> <metric-name> <value>
 
-1650973075 cpu 47
-1650973087 cpu 47
-1650973099 mem 737917
-1650973111 cpu 50
+1650973075 cpu 47</br>
+1650973087 cpu 47</br>
+1650973099 mem 737917</br>
+1650973111 cpu 50</br>
 
- The Main.java class creates the metric-consumer and tests it with the previous input.txt file. As a result, an output.txt file is created
+The Main.java class creates the metric-consumer and tests it with the previous input.txt file. As a result, an output.txt file is created
 
-- The MetricConsumer.java class is the actual code
+The MetricConsumer.java class is the actual code
 
-- Other gradle files for compiling and running the application
+Other gradle files for compiling and running the application
 
 We ask you to do 3 simple things:
 
@@ -28,7 +27,7 @@ We ask you to do 3 simple things:
 
 - Modify the metric-consumer in order to be able to process multiple metrics in parallel.
 
-Complete statement can be found [here](/nr-be-technical-interview/doc/Home Task Interview - Java.docx.pdf)
+Complete statement can be found [here](nr-be-technical-interview/doc/Home Task Interview - Java.docx.pdf)
 
 ## Environment:
 
@@ -40,10 +39,18 @@ Complete statement can be found [here](/nr-be-technical-interview/doc/Home Task 
 
 - Go to baseline and run ".\gradlew.bat run"
 
+you can see this:
+
+![alt text](https://github.com/jeag2002/NewRelicTest/blob/master/gradlew-execution.jpg?raw=true)
+
 ## Solution:
+
+Main class which executes the three implementations can be found [here](nr-be-technical-interview/src/main/java/com/newrelic/metrics/Main.java)
 
 Original Metric implementation can be found [here](nr-be-technical-interview/src/main/java/com/newrelic/metrics/MetricConsumer.java)
 
 Refactor Metric implementation can be found [here](nr-be-technical-interview/src/main/java/com/newrelic/metrics/refactor/MetricConsumerRefactor.java)
 
-Enhanced Metric implementation can be found [here](nr-be-technical-interview/src/main/java/com/newrelic/metrics/enhanced/MetricConsumerEnhanced.java).Uses parallelStream and concurrent containers
+Enhanced Metric implementation can be found [here](nr-be-technical-interview/src/main/java/com/newrelic/metrics/enhanced/MetricConsumerEnhanced.java)
+
+This last proposed solution uses parallelStream and concurrent containers
