@@ -1,6 +1,6 @@
 # NEW RELIC TEST
 
-##First Exercise
+## First Exercise
 
 Proposal of solution for the proposal exercice of new relic, for later discussion
 
@@ -57,7 +57,7 @@ Enhanced Metric implementation can be found [here](nr-be-technical-interview/src
 
 This last proposed solution uses parallelStream and concurrent containers
 
-##Second Exercise
+## Second Exercise
 
 Architecture discussion of this schema
 
